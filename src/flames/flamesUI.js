@@ -3,7 +3,7 @@ import { useState } from 'react';
 import './flamesUI.css';
 import flame from './logic';
 import { Link } from 'react-router-dom';
-
+import {sendData} from '../Apis/Api';
 
 
 function FlamesUI() {
@@ -21,9 +21,16 @@ function FlamesUI() {
   const handleSubmit= (e)=>{
     e.preventDefault();
     setLoading(true);
-    const result=flame(name1,name2);
-    localStorage.setItem('result',JSON.stringify(result));
-    localStorage.setItem('partner',JSON.stringify(name2));
+
+    sendData(name1,name2).then(response=>{
+      localStorage.setItem('id',response.data.id);
+      const result=flame(name1,name2);
+      localStorage.setItem('result',JSON.stringify(result));
+      localStorage.setItem('partner',JSON.stringify(name2));
+      setLoading(false);
+    })
+    .catch(error=>console.log(error))
+
     setShowres(true);
   }
 
@@ -57,7 +64,7 @@ function FlamesUI() {
           />
         </div>
         <div className='btn-container'>
-          <button type="submit" className="btn" disabled={loading}>Submit</button>
+          <button type="submit" className="btn" disabled={loading&&!showres}>Submit</button>
           <button type="button" className="btn" disabled={loading} onClick={clearForm}>Clear</button>
         </div>
         {loading?<h4>Calculating result....</h4>:null}
