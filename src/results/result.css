@@ -1,19 +1,21 @@
-.container {
+@import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&family=Poppins:ital,wght@1,500&display=swap');@import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap');
+  .img_container {
     width: 400px;
-    background-color: transparent;
-    padding: 50px;
-    border:1px solid gray;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    font-size: 20px;
-    font-family: 'Love Ya Like A Sister';
+    height:500px;
+    background-color: rgba(0,0,0,0.2);
     position: relative;
+    border-radius: 8px;
   }
-  img{
-    width:50px;
-    height:50px ; 
+  .result{
+    width:300px;
+    height:400px ; 
     position: absolute;
     top:50%;
     left:50%;
     transform: translate(-50%, -50%);
+    border-radius: 5px;
+  }
+  h2{
+    margin:10px;
+    text-align: center;
   }

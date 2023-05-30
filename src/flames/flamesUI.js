@@ -1,20 +1,33 @@
 import { useState } from 'react';
+
 import './flamesUI.css';
+import flame from './logic';
+import { Link } from 'react-router-dom';
+
+
 
 function FlamesUI() {
   const [name1, setName1] = useState('');
   const [name2, setName2] = useState('');
   const [loading,setLoading]=useState(false);
+  const [showres,setShowres]=useState(false);
+
+  
   const clearForm = () => {
     setName1('');
     setName2('');
   };
 
-  const handleSubmit=(e)=>{
+  const handleSubmit= (e)=>{
     e.preventDefault();
     setLoading(true);
-    
+    const result=flame(name1,name2);
+    localStorage.setItem('result',JSON.stringify(result));
+    localStorage.setItem('partner',JSON.stringify(name2));
+    setShowres(true);
   }
+
+  
 
   return (
     <div className="container">
@@ -47,8 +60,11 @@ function FlamesUI() {
           <button type="submit" className="btn" disabled={loading}>Submit</button>
           <button type="button" className="btn" disabled={loading} onClick={clearForm}>Clear</button>
         </div>
+        {loading?<h4>Calculating result....</h4>:null}
       </form>
-    </div>
+      <br/>
+     {showres&& !loading? <div className='res'><Link to='result'>click here to see result</Link></div>:null}
+     </div>
   );
 }
 
