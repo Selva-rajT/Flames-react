@@ -19,3 +19,10 @@
     margin:10px;
     text-align: center;
   }
+
+  .home_link{
+    width:100%;
+    position: absolute;
+    bottom:15px;
+    text-align: center;
+  }
