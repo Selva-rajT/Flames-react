@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Flames-react/static/css/main.e23343db.css",
+    "main.js": "/Flames-react/static/js/main.75e549db.js",
+    "static/media/bg.jpg": "/Flames-react/static/media/bg.982c4d1eda7f7f1c843c.jpg",
+    "index.html": "/Flames-react/index.html",
+    "main.e23343db.css.map": "/Flames-react/static/css/main.e23343db.css.map",
+    "main.75e549db.js.map": "/Flames-react/static/js/main.75e549db.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e23343db.css",
+    "static/js/main.75e549db.js"
+  ]
+}
