@@ -26,6 +26,7 @@ function FlamesUI() {
       localStorage.setItem('id',response.data.id);
       const result=flame(name1,name2);
       localStorage.setItem('result',JSON.stringify(result));
+      localStorage.setItem('user',JSON.stringify(name1));
       localStorage.setItem('partner',JSON.stringify(name2));
       setTimeout(()=>{ setLoading(false)},1500);
     })

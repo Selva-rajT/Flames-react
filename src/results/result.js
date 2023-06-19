@@ -12,6 +12,7 @@ const Result = () => {
 
 
   const result=JSON.parse(localStorage.getItem('result'));
+  const you=JSON.parse(localStorage.getItem('user'));
   const partner=JSON.parse(localStorage.getItem('partner'));
   const userId=localStorage.getItem('id');
 
@@ -26,12 +27,12 @@ const Result = () => {
     "https://images.pexels.com/photos/220413/pexels-photo-220413.jpeg?auto=compress&cs=tinysrgb&w=600"
   ];
   const results=[
-    `You and ${partner} are Friends`,
-    `You and ${partner} are Lovers`,
-    `${partner} having affection on You`,
-    `You will Marry ${partner}`,
-    `You and ${partner} are Enemies`,
-    `You and ${partner} are Siblings`
+    `${you} and ${partner} are Friends`,
+    `${you} and ${partner} are Lovers`,
+    `${you} are having affection on ${partner} `,
+    `${you} will Marry ${partner}`,
+    `${you} and ${partner} are Enemies`,
+    `${you} and ${partner} are Siblings`
     ]
   
    useEffect(()=>{
